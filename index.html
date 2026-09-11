@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna Conger</title>
+  <meta name="description" content="Anna Conger">
+  <style>
+  :root {
+  --ink: #141414;
+--muted: #6b6b6b;
+--line: #e4e4e4;
+  --bg: #ffffff;
+  --max: 640px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+background: var(--bg);
+color: var(--ink);
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+font-size: 17px;
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: var(--max);
+margin: 0 auto;
+padding: 96px 24px 120px;
+}
+h1 {
+  font-size: 27px;
+font-weight: 600;
+letter-spacing: -0.01em;
+margin: 0 0 20px;
+}
+.links {
+  display: flex;
+flex-wrap: wrap;
+gap: 4px 14px;
+  margin: 0 0 40px;
+padding: 0;
+list-style: none;
+}
+.links a {
+  color: var(--muted);
+text-decoration: none;
+font-size: 15px;
+border-bottom: 1px solid transparent;
+}
+.links a:hover,
+  .links a:focus-visible {
+  color: var(--ink);
+border-bottom-color: var(--ink);
+}
+p {
+margin: 0 0 24px;
+}
+.label {
+  font-size: 15px;
+  color: var(--muted);
+margin: 0 0 12px;
+}
+ul.items {
+  margin: 0 0 32px;
+padding: 0 0 0 20px;
+}
+ul.items li {
+margin: 0 0 12px;
+padding-left: 4px;
+}
+ul.items li::marker {
+  color: var(--muted);
+  }
+  .note {
+  margin-top: 56px;
+padding-top: 24px;
+border-top: 1px solid var(--line);
+color: var(--muted);
+font-size: 14px;
+}
+  a { color: inherit; }
+a[data-edit] {
+text-decoration: none;
+border-bottom: 1px dashed var(--muted);
+}
+@media (max-width: 480px) {
+main { padding: 64px 20px 80px; }
+h1 { font-size: 24px; }
+  }
+  </style>
+  </head>
+<body>
+<main>
+<h1>Anna Conger</h1>
+  <ul class="links">
+<li><a href="mailto:hello@annaconger.com" data-edit>hello@annaconger.com</a></li>
+  <li><a href="#" data-edit>LinkedIn</a></li>
+<li><a href="#" data-edit>Twitter / X</a></li>
+</ul>
+<p>[One or two sentences that say who you are and what you do right now this is the line people read first.]</p>
+  <p class="label">Previously:</p>
+    <ul class="items">
+<li>[Role] at [Company] [one line on what you actually did or shipped]</li>
+  <li>[Role] at [Company] [one line on what you actually did or shipped]</li>
+<li>[Project or freelance work worth naming]</li>
+</ul>
+  <p>[Optional closing line something personal: where you're based, what you're into outside work, a small bit of personality.]</p>
+  <div class="note">
+Placeholder content replace the bracketed text above with your real bio, links, and history.
+</div>
+</main>
+</body>
+</html>

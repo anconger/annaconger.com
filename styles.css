@@ -106,7 +106,7 @@ html:has(#theme-toggle:checked) .icon-moon { display: block; }
 }
 
 .view {
-  min-height: 340px;
+  min-height: 404px;
 }
 
 #agent-view {
@@ -147,7 +147,7 @@ html:has(#theme-toggle:checked) .icon-moon { display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 10px;
   padding: 24px 0 40px;
 }
 

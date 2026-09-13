@@ -135,6 +135,7 @@ html:has(#theme-toggle:checked) .icon-moon { display: block; }
 #agent-view ul {
   margin: 0 0 32px;
   padding: 0 0 0 20px;
+  list-style-type: "\2013\a0";
 }
 
 #agent-view li {

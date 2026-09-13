@@ -152,6 +152,8 @@ html:has(#theme-toggle:checked) .icon-moon { display: block; }
 }
 
 #origami {
+  all: unset;
+  position: relative;
   width: 336px;
   height: 309px;
   max-width: 100%;
@@ -159,16 +161,78 @@ html:has(#theme-toggle:checked) .icon-moon { display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#origami:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 8px;
 }
 
 #origami img {
+  display: block;
+}
+
+.origami-closed {
   width: 236px;
   height: auto;
   max-width: 82%;
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
-html:has(#theme-toggle:checked) #origami img {
+.origami-open-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 66.7%;
+  height: 96.1%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.origami-open-wrap .origami-open {
+  width: 100%;
+  height: 100%;
+}
+
+#origami.is-open .origami-closed {
+  opacity: 0;
+}
+
+#origami.is-open .origami-open-wrap {
+  opacity: 1;
+}
+
+html:has(#theme-toggle:checked) .origami-closed,
+html:has(#theme-toggle:checked) .origami-open {
   filter: invert(1);
+}
+
+.origami-message {
+  position: absolute;
+  left: 27%;
+  top: 33.3%;
+  width: 46%;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 9.5px;
+  line-height: 1.35;
+  padding: 4px 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+}
+
+#origami.is-open .origami-message {
+  opacity: 1;
 }
 
 .hint {

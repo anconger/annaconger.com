@@ -84,9 +84,13 @@
   </section>
 
   <div id="human-view" class="view">
-    <div id="origami">
-      <img src="origami-placeholder.svg" alt="Paper fortune teller" width="336" height="309">
-    </div>
+    <button type="button" id="origami" aria-label="Paper fortune teller, click to reveal a fact">
+      <img class="origami-closed" src="origami-placeholder.svg" alt="">
+      <span class="origami-open-wrap">
+        <img class="origami-open" src="origami-opened.svg" alt="">
+        <span class="origami-message" id="origamiMessage" aria-live="polite"></span>
+      </span>
+    </button>
     <p class="hint">(click to shuffle)</p>
   </div>
 
@@ -103,5 +107,41 @@
   </div>
 
 </div>
+
+<script>
+(function () {
+  var btn = document.getElementById('origami');
+  var messageEl = document.getElementById('origamiMessage');
+  var messages = Array.prototype.map.call(
+    document.querySelectorAll('#agent-view li'),
+    function (li) { return li.textContent.trim(); }
+  );
+  var index = -1;
+  var closeTimer = null;
+  var HOLD_MS = 3000;
+
+  function close() {
+    clearTimeout(closeTimer);
+    closeTimer = null;
+    btn.classList.remove('is-open');
+  }
+
+  function open() {
+    if (messages.length === 0) return;
+    index = (index + 1) % messages.length;
+    messageEl.textContent = messages[index];
+    btn.classList.add('is-open');
+    closeTimer = setTimeout(close, HOLD_MS);
+  }
+
+  btn.addEventListener('click', function () {
+    if (btn.classList.contains('is-open')) {
+      close();
+    } else {
+      open();
+    }
+  });
+})();
+</script>
 </body>
 </html>

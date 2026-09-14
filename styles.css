@@ -331,10 +331,6 @@ html:has(#theme-toggle:checked) .origami-open {
     max-width: none;
   }
 
-  .one-liner .force-break {
-    display: none;
-  }
-
   #origami {
     width: 78vw;
     height: auto;
